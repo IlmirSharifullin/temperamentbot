@@ -8,4 +8,6 @@ COPY . .
 RUN apt-get update && apt-get install -y libpq-dev python3-dev
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
+ENV PYTHONPATH "${PYTHONPATH}:/app/src"
+
 CMD [ "python", "src/bot.py"]
