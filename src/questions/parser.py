@@ -25,7 +25,7 @@ def save(data, filename: str = './questions.json'):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def get(filename: str = 'questions/questions.json'):
+def get(filename: str = 'src/questions/questions.json'):
     with open(filename) as f:
         data = json.load(f)
     return data
@@ -43,5 +43,5 @@ if __name__ == '__main__':
     data = parse('questions/questions.txt')
     save(data)
 
-QUESTIONS = get('questions/questions.json')
+QUESTIONS = get('src/questions/questions.json')
 QUESTIONS_COUNT = len(QUESTIONS)
